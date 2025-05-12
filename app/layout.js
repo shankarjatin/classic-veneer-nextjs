@@ -14,14 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Classic Veneer",
-  description: "Veneer and Plywood Manufacturer",
- 
+  title: "Classic Veneer - Premium Wood Veneers & Plywood",
+  description: "Premium quality veneer and plywood manufacturer from Gabon, Africa. Sustainable Okoumé wood products crafted with precision and care.",
+  keywords: ["veneer", "plywood", "Okoumé", "wood", "Gabon", "Africa", "wood products", "sustainable"],
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#7B3F00",
+  openGraph: {
+    title: "Classic Veneer - Premium Wood Products",
+    description: "Premium quality veneer and plywood manufacturer from Gabon, Africa. Sustainable Okoumé wood products.",
+    url: "https://classicveneer.org",
+    siteName: "Classic Veneer",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

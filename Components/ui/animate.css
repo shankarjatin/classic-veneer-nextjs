@@ -1,16 +1,67 @@
 @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  from {
+    transform: translateX(0);
   }
-  
-  .animate-marquee {
-    animation: marquee 15s linear infinite;
+  to {
+    transform: translateX(-100%);
   }
-  
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+/* Background Colors */
+.bg-dark-walnut {
+  background-color: #3E2A47;
+}
+
+.bg-chestnut-brown {
+  background-color: #7B3F00;
+}
+
+.bg-light-oak {
+  background-color: #D1B49D;
+}
+
+.bg-creamy-beige {
+  background-color: #F1E2C6;
+}
+
+.bg-warm-taupe {
+  background-color: #C4A79C;
+}
+
+.bg-soft-sand {
+  background-color: #D9C1A3;
+}
+
+/* Text Colors */
+.text-dark-walnut {
+  color: #3E2A47;
+}
+
+.text-chestnut-brown {
+  color: #7B3F00;
+}
+
+.text-light-oak {
+  color: #D1B49D;
+}
+
+.text-creamy-beige {
+  color: #F1E2C6;
+}
+
+.text-warm-taupe {
+  color: #C4A79C;
+}
+
+.text-soft-sand {
+  color: #D9C1A3;
+}
+
+/* The rest of your CSS remains unchanged */
 /* Background Colors */
 .dark-walnut {
     color: #3E2A47;
