@@ -162,7 +162,7 @@ const Navbar = () => {
             ))}
             <a 
               href="mailto:sales@classicveneer.org" 
-              className="block text-lg py-2 px-4 rounded-md bg-[#7B3F00] text-[#F1E2C6] mt-4 flex items-center"
+              className="text-lg py-2 px-4 rounded-md bg-[#7B3F00] text-[#F1E2C6] mt-4 flex items-center"
               onClick={toggleMenu}
             >
               <svg
