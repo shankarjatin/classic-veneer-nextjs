@@ -13,6 +13,7 @@ import {
   FaLeaf,
   FaShieldAlt 
 } from 'react-icons/fa';
+import ContactButton from './ContactButton';
 const AboutUs = () => {
   return (
     <section className="bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C] py-24 px-6 md:px-12">
@@ -108,11 +109,23 @@ const AboutUs = () => {
               viewport={{ once: true }}
             >
               <div className="relative h-96 md:h-[28rem]">
-                <Image
-                  src="/assets/images/deepak-chaudhary.jpg" 
+              <Image
+                  src="/assets/images/ajay-kumar.jpg" 
                   alt="Deepak Chaudhary - Director General"
                   fill
                   className="object-cover object-center"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallbackContainer = document.createElement('div');
+                    fallbackContainer.className = 'w-full h-full bg-[#D1B49D] flex items-center justify-center';
+                    const initials = document.createElement('span');
+                    initials.className = 'text-5xl font-bold text-[#7B3F00]';
+                    initials.textContent = 'DC';
+                    fallbackContainer.appendChild(initials);
+                    e.currentTarget.parentNode.appendChild(fallbackContainer);
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-8">
@@ -185,11 +198,23 @@ const AboutUs = () => {
               viewport={{ once: true }}
             >
               <div className="relative h-96 md:h-[28rem]">
-                <Image
+              <Image
                   src="/assets/images/ajay-kumar.jpg" 
                   alt="Ajay Kumar - Admin and Sales Director"
                   fill
                   className="object-cover object-center"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallbackContainer = document.createElement('div');
+                    fallbackContainer.className = 'w-full h-full bg-[#D1B49D] flex items-center justify-center';
+                    const initials = document.createElement('span');
+                    initials.className = 'text-5xl font-bold text-[#7B3F00]';
+                    initials.textContent = 'AK';
+                    fallbackContainer.appendChild(initials);
+                    e.currentTarget.parentNode.appendChild(fallbackContainer);
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-8">
@@ -537,12 +562,11 @@ const AboutUs = () => {
           <p className="text-xl text-[#C4A79C] max-w-3xl mx-auto mb-10">
             Let us help you transform your space with our premium wood products
           </p>
-          <a 
-            href="/contact" 
+          <ContactButton 
             className="inline-block bg-[#7B3F00] text-[#F1E2C6] font-bold text-lg py-4 px-10 rounded-lg hover:bg-[#8B4F10] transition-colors duration-300"
           >
             Contact Us Today
-          </a>
+          </ContactButton>
         </motion.div>
       </div>
     </section>
