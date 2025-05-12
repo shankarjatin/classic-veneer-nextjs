@@ -42,7 +42,7 @@ const CarouselDemo = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C]  p-32">
+    <div className="bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C]  p-16">
       <h2 className="text-4xl lg:text-6xl font-extrabold text-[#3E2A47] text-center mb-10 lg:mb-20">
         Types of Glue Used
       </h2>

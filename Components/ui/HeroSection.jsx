@@ -8,6 +8,10 @@ import './animate.css';
 const HeroSection = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -60,12 +64,12 @@ const HeroSection = () => {
             >
               Our Products
             </Link>
-            <Link
-              href="/about"
+            <button
+              onClick={handleOpenModal}
               className="px-6 py-3 bg-[#D1B49D] text-[#3E2A47] font-bold rounded-lg shadow-lg hover:shadow-2xl hover:shadow-orange-500"
             >
-              Learn More
-            </Link>
+              Get in Touch
+            </button>
           </motion.div>
         </div>
       </section>
