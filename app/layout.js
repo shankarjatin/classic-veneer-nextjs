@@ -16,10 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Classic Veneer",
   description: "Veneer and Plywood Manufacturer",
-  icons: {
-    icon: "/logo.png",
-   
-  },
+ 
 };
 
 export default function RootLayout({ children }) {
