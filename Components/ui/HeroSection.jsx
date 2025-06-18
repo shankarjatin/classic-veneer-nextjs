@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <div>
       {showModal && <Modal onClose={handleCloseModal} />}
-      <section className="relative h-[100vh] flex flex-col justify-center items-center overflow-hidden">
+      <section className="relative h-[80vh] md:h-[100vh] flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <video className="object-cover w-full h-full" autoPlay loop muted>
             <source src="/videos/bgVideo.mp4" type="video/mp4" />
@@ -42,7 +42,7 @@ const HeroSection = () => {
             transition={{ duration: 1 }}
             className="text-4xl md:text-6xl font-extrabold leading-tight text-[#F1E2C6] drop-shadow-lg"
           >
-            Discover Premium Plywood with <span className="text-orange-500">Classic Veneer</span>
+            Discover Premium Plywood with <span className="text-orange-500">Classic Veneer SARL</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}

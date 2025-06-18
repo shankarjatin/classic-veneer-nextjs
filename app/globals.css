@@ -114,6 +114,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 /* global.css */
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
 /* Font Families */
 .font-sans {
