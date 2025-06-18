@@ -49,22 +49,29 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            {/* Image must be in the public folder */}
-            <div className="relative w-12 h-12">
-  <Image
-    src="/logo.png" // Simplify to the root of public folder
-    alt="Classic Veneer"
-    width={48}
-    height={48}
-    className="object-contain"
-    priority
-  />
-</div>
-            <span className="text-2xl font-bold text-[#F1E2C6]">
-              Classic Veneer
-            </span>
-          </Link>
+       <Link href="/" className="flex items-center">
+  {/* Logo */}
+  <div className="relative w-12 h-12 mr-2">
+    <Image
+      src="/logo.png"
+      alt="Classic Veneer"
+      width={48}
+      height={48}
+      className="object-contain"
+      priority
+    />
+  </div>
+  
+  {/* Company name and tagline */}
+  <div className="flex flex-col">
+    <span className="text-xl sm:text-2xl font-bold text-[#F1E2C6] leading-tight">
+      Classic Veneer SARL
+    </span>
+    <span className="text-xs sm:text-sm text-[#D1B49D] font-light">
+      Building Tomorrow With Timeless Quality
+    </span>
+  </div>
+</Link>
 
           {/* Desktop Navbar Links */}
           <div className="hidden md:flex space-x-1 items-center">

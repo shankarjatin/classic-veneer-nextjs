@@ -5,6 +5,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Modal from '../modals/modal';
 
+// Reusable BulletPoint component for consistent styling
+const BulletPoint = ({ text, isCompact = false }) => (
+  <li className="flex items-start group transition-all duration-300">
+    <div className="relative flex-shrink-0 mt-1.5">
+      <div className="absolute w-2.5 h-2.5 rounded-full bg-[#7B3F00] group-hover:bg-[#8B4F10] transition-colors"></div>
+      <div className="absolute w-2.5 h-2.5 rounded-full bg-[#7B3F00] opacity-25 group-hover:opacity-40 scale-150 transition-all"></div>
+    </div>
+    <span className={`text-[#7B3F00] ml-4 ${isCompact ? "text-sm" : "text-base"} leading-tight group-hover:text-[#8B4F10] transition-colors`}>
+      {text}
+    </span>
+  </li>
+);
+
 const services = [
   { 
     name: 'Commercial Plywood', 
@@ -106,7 +119,7 @@ const ServicesSection = () => {
                 </p>
                 
                 <div className="bg-[#D1B49D]/30 rounded-xl p-5">
-                  <h4 className="text-lg font-semibold text-[#3E2A47] mb-3 flex items-center">
+                  <h4 className="text-lg font-semibold text-[#3E2A47] mb-4 flex items-center">
                     <span className="w-5 h-5 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -114,12 +127,10 @@ const ServicesSection = () => {
                     </span>
                     Key Features
                   </h4>
-                  <ul className="grid grid-cols-2 gap-2">
+                  {/* Updated bullet points implementation with consistent styling */}
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-2">
                     {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-[#7B3F00]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#7B3F00] mr-2"></span>
-                        {feature}
-                      </li>
+                      <BulletPoint key={i} text={feature} isCompact={true} />
                     ))}
                   </ul>
                 </div>

@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
+import Modal from '../modals/modal';
 
 // Use specific color codes instead of variables
 const COLORS = {
@@ -16,10 +18,12 @@ const COLORS = {
 
 // Products data
 const products = [
+  // First category remains unchanged
   {
     category: "Veneer Sheets",
     description: "Veneer is a thin layer of wood sliced or peeled from logs, which is then applied to a substrate for a superior finish. We offer a wide range of veneer sheets, crafted from premium hardwoods. Our veneers are ideal for creating elegant and natural surfaces for furniture, cabinetry, flooring, and interior paneling.",
     types: [
+      // Veneer types remain unchanged
       {
         name: 'Rotary Cut Face Veneer',
         imgSrc: '/assets/images/face-veneer.png',
@@ -67,6 +71,7 @@ const products = [
     category: "Plywood",
     description: "Our plywood is made from high-quality hardwood and softwood veneers bonded together with durable adhesives, providing strength, stability, and versatility. Plywood is an essential material used in a variety of applications, from construction to furniture manufacturing.",
     types: [
+      // Commercial and Construction plywood types remain unchanged
       {
         name: 'Commercial Plywood',
         imgSrc: '/assets/images/commercial.jpg',
@@ -110,6 +115,7 @@ const products = [
           '10 Feet (3100mm x 1530mm) (Big Format)'
         ]
       },
+      // Updated Marine plywood with additional size
       {
         name: 'Marine Plywood',
         imgSrc: '/assets/images/marine.jpg',
@@ -127,9 +133,11 @@ const products = [
         ],
         sizes: [
           '8 Feet (2500mm x 1220mm)',
-          '10 Feet (3100mm x 1530mm) (Big Format)'
+          '10 Feet (3100mm x 1530mm) (Big Format)',
+          '3100/3050 x 1530/1525 mm' // Added new size
         ]
       },
+      // Updated Laminated plywood with additional size
       {
         name: 'Laminated Plywood',
         imgSrc: '/assets/images/laminated.jpg',
@@ -148,7 +156,8 @@ const products = [
         ],
         sizes: [
           '8 Feet (2500mm x 1220mm/1250mm)',
-          '10 Feet (3100mm x 1530mm) (Big Format)'
+          '10 Feet (3100mm x 1530mm) (Big Format)',
+          '3100/3050 x 1530/1525 mm' // Added new size
         ]
       }
     ]
@@ -156,9 +165,41 @@ const products = [
 ];
 
 const ProductsSection = () => {
+   const [showModal, setShowModal] = useState(false); // State for controlling modal visibility
+
+  // Accordion toggle handler
+  const toggleAccordion = (productIndex, section) => {
+    setExpandedAccordions(prev => ({
+      ...prev,
+      [`${productIndex}-${section}`]: !prev[`${productIndex}-${section}`]
+    }));
+  };
+
+  // Modal handlers
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
   }
+
+  const BulletPoint = ({ text, isCompact = false }) => (
+    <li className="flex items-start group transition-all duration-300">
+      <div className="relative flex-shrink-0 mt-1.5">
+        <div className="absolute w-3 h-3 rounded-full bg-[#7B3F00] group-hover:bg-[#8B4F10] transition-colors"></div>
+        <div className="absolute w-3 h-3 rounded-full bg-[#7B3F00] opacity-25 group-hover:opacity-40 scale-150 transition-all"></div>
+      </div>
+      <span className={`text-[#7B3F00] ml-5 ${isCompact ? "text-sm md:text-base" : "text-base md:text-lg"} leading-tight group-hover:text-[#8B4F10] transition-colors`}>
+        {text}
+      </span>
+    </li>
+  );
+  
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C]">
@@ -245,6 +286,7 @@ const ProductsSection = () => {
                             {product.description}
                           </p>
                           
+                          {/* Thickness Options */}
                           <div className="mb-10">
                             <h4 className="text-xl md:text-2xl font-bold text-[#3E2A47] mb-4 flex items-center">
                               <span className="w-6 h-6 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
@@ -266,6 +308,7 @@ const ProductsSection = () => {
                             </div>
                           </div>
                           
+                          {/* Applications - Improved Bullet Points */}
                           <div className="mb-10">
                             <h4 className="text-xl md:text-2xl font-bold text-[#3E2A47] mb-4 flex items-center">
                               <span className="w-6 h-6 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
@@ -276,17 +319,15 @@ const ProductsSection = () => {
                               Applications
                             </h4>
                             <div className="bg-[#D1B49D]/30 rounded-xl p-6">
-                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 gap-y-4">
                                 {product.applications.map((app, i) => (
-                                  <li key={i} className="flex items-center text-[#7B3F00]">
-                                    <span className="w-2 h-2 rounded-full bg-[#7B3F00] mr-2"></span>
-                                    {app}
-                                  </li>
+                                  <BulletPoint key={i} text={app} />
                                 ))}
                               </ul>
                             </div>
                           </div>
                           
+                          {/* Available Sizes - Improved Bullet Points */}
                           <div>
                             <h4 className="text-xl md:text-2xl font-bold text-[#3E2A47] mb-4 flex items-center">
                               <span className="w-6 h-6 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
@@ -297,12 +338,9 @@ const ProductsSection = () => {
                               Available Sizes
                             </h4>
                             <div className="bg-[#D1B49D]/30 rounded-xl p-6">
-                              <ul className="space-y-3">
+                              <ul className="space-y-4">
                                 {product.sizes.map((size, i) => (
-                                  <li key={i} className="flex items-center text-[#7B3F00]">
-                                    <span className="w-2 h-2 rounded-full bg-[#7B3F00] mr-2"></span>
-                                    {size}
-                                  </li>
+                                  <BulletPoint key={i} text={size} isCompact={true} />
                                 ))}
                               </ul>
                             </div>
@@ -332,16 +370,18 @@ const ProductsSection = () => {
             Our commitment to sustainability ensures that all our wood products are sourced from responsibly managed forests.
           </p>
           
-          <motion.a 
+          <motion.button 
+            onClick={openModal}
             href="/contact"
             className="inline-block bg-[#7B3F00] text-[#F1E2C6] font-bold text-lg py-4 px-10 rounded-lg shadow-lg hover:shadow-xl hover:shadow-[#7B3F00]/40 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Request a Quote
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
+            {showModal && <Modal onClose={closeModal} />}
     </section>
   );
 };

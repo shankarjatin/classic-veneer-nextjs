@@ -27,7 +27,8 @@ const Footer = () => {
             <div className="space-y-3 mt-6">
               <div className="flex items-center">
                 <FaMapMarkerAlt className="text-[#7B3F00] h-5 w-5 mr-3" />
-                <span className="text-gray-300">Libreville, Gabon</span>
+                <span className="text-gray-300">Plot-C-15G B.P 1024 – Libreville, GSE 27  
+Gabon Tel +241-066482507</span>
               </div>
               <div className="flex items-center">
                 <FaPhone className="text-[#7B3F00] h-5 w-5 mr-3" />

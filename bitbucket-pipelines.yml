@@ -1,0 +1,12 @@
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - step:
+        name: Generate SSH Key
+        script:
+          - ssh-keygen -t rsa -b 4096 -C "bitbucket-ci" -f bitbucket_ci_key -N ""
+          - echo "==== PRIVATE KEY ===="
+          - cat bitbucket_ci_key
+          - echo "==== PUBLIC KEY ===="
+          - cat bitbucket_ci_key.pub
