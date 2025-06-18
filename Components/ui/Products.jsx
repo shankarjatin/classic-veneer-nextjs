@@ -67,11 +67,12 @@ const products = [
       }
     ]
   },
+  // Rest of product data unchanged
   {
     category: "Plywood",
     description: "Our plywood is made from high-quality hardwood and softwood veneers bonded together with durable adhesives, providing strength, stability, and versatility. Plywood is an essential material used in a variety of applications, from construction to furniture manufacturing.",
     types: [
-      // Commercial and Construction plywood types remain unchanged
+      // Data unchanged - keeping all product types and details
       {
         name: 'Commercial Plywood',
         imgSrc: '/assets/images/commercial.jpg',
@@ -93,6 +94,7 @@ const products = [
           '10 Feet (3100mm x 1530mm) (Big Format)'
         ]
       },
+      // Other product types unchanged
       {
         name: 'Construction Plywood',
         imgSrc: '/assets/images/constructive.jpg',
@@ -115,7 +117,6 @@ const products = [
           '10 Feet (3100mm x 1530mm) (Big Format)'
         ]
       },
-      // Updated Marine plywood with additional size
       {
         name: 'Marine Plywood',
         imgSrc: '/assets/images/marine.jpg',
@@ -134,10 +135,9 @@ const products = [
         sizes: [
           '8 Feet (2500mm x 1220mm)',
           '10 Feet (3100mm x 1530mm) (Big Format)',
-          '3100/3050 x 1530/1525 mm' // Added new size
+          '3100/3050 x 1530/1525 mm'
         ]
       },
-      // Updated Laminated plywood with additional size
       {
         name: 'Laminated Plywood',
         imgSrc: '/assets/images/laminated.jpg',
@@ -157,7 +157,7 @@ const products = [
         sizes: [
           '8 Feet (2500mm x 1220mm/1250mm)',
           '10 Feet (3100mm x 1530mm) (Big Format)',
-          '3100/3050 x 1530/1525 mm' // Added new size
+          '3100/3050 x 1530/1525 mm'
         ]
       }
     ]
@@ -165,15 +165,7 @@ const products = [
 ];
 
 const ProductsSection = () => {
-   const [showModal, setShowModal] = useState(false); // State for controlling modal visibility
-
-  // Accordion toggle handler
-  const toggleAccordion = (productIndex, section) => {
-    setExpandedAccordions(prev => ({
-      ...prev,
-      [`${productIndex}-${section}`]: !prev[`${productIndex}-${section}`]
-    }));
-  };
+  const [showModal, setShowModal] = useState(false);
 
   // Modal handlers
   const openModal = () => {
@@ -190,44 +182,49 @@ const ProductsSection = () => {
 
   const BulletPoint = ({ text, isCompact = false }) => (
     <li className="flex items-start group transition-all duration-300">
-      <div className="relative flex-shrink-0 mt-1.5">
-        <div className="absolute w-3 h-3 rounded-full bg-[#7B3F00] group-hover:bg-[#8B4F10] transition-colors"></div>
-        <div className="absolute w-3 h-3 rounded-full bg-[#7B3F00] opacity-25 group-hover:opacity-40 scale-150 transition-all"></div>
+      <div className="relative flex-shrink-0 mt-1">
+        {/* Smaller bullet point */}
+        <div className="absolute w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#7B3F00] group-hover:bg-[#8B4F10] transition-colors"></div>
+        <div className="absolute w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#7B3F00] opacity-25 group-hover:opacity-40 scale-150 transition-all"></div>
       </div>
-      <span className={`text-[#7B3F00] ml-5 ${isCompact ? "text-sm md:text-base" : "text-base md:text-lg"} leading-tight group-hover:text-[#8B4F10] transition-colors`}>
+      {/* Smaller text */}
+      <span className={`text-[#7B3F00] ml-3 sm:ml-5 ${isCompact ? "text-xs sm:text-sm md:text-base" : "text-xs sm:text-sm md:text-base"} leading-tight group-hover:text-[#8B4F10] transition-colors`}>
         {text}
       </span>
     </li>
   );
   
-
+  // Reduced padding and spacing for mobile
   return (
-    <section className="py-6 md:py-12 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C]">
+    <section className="py-4 sm:py-6 md:py-12 px-3 sm:px-6 md:px-12 lg:px-24 bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C] font-montserrat">
       <div className="max-w-7xl mx-auto">
         <motion.div 
-          className="text-center mb-24"
+          className="text-center mb-8 sm:mb-16 md:mb-24" // Reduced vertical spacing
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1 }}
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-nexaBold font-extrabold text-[#3E2A47] mb-6">
+          {/* Smaller title on mobile */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#3E2A47] mb-3 sm:mb-6">
             Our Products
           </h2>
-          <div className="w-40 h-1 bg-[#7B3F00] mx-auto mb-8"></div>
-          <p className="text-xl text-[#7B3F00] max-w-3xl mx-auto">
+          <div className="w-24 sm:w-32 md:w-40 h-0.5 sm:h-1 bg-[#7B3F00] mx-auto mb-4 sm:mb-6 md:mb-8"></div>
+          {/* Smaller description text */}
+          <p className="text-base sm:text-lg md:text-xl text-[#7B3F00] max-w-3xl mx-auto px-2">
             Exquisite veneers and premium plywood crafted with precision and excellence
           </p>
         </motion.div>
 
         <Tab.Group>
-          <Tab.List className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-6 bg-transparent mb-20 max-w-3xl mx-auto">
+          {/* Smaller tab buttons with reduced spacing */}
+          <Tab.List className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-6 bg-transparent mb-8 sm:mb-12 md:mb-20 max-w-3xl mx-auto">
             {products.map((category) => (
               <Tab
                 key={category.category}
                 className={({ selected }) =>
                   classNames(
-                    'w-full py-4 text-lg font-medium leading-5 rounded-xl transition-all duration-300',
-                    'focus:outline-none shadow-lg',
+                    'w-full py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-medium leading-5 rounded-lg sm:rounded-xl transition-all duration-300',
+                    'focus:outline-none shadow-md sm:shadow-lg',
                     selected
                       ? 'bg-[#7B3F00] text-white border-2 border-white/20'
                       : 'bg-[#F1E2C6] text-[#3E2A47] hover:bg-[#C4A79C] hover:text-white'
@@ -243,83 +240,93 @@ const ProductsSection = () => {
             {products.map((category, idx) => (
               <Tab.Panel
                 key={idx}
-                className="rounded-2xl p-6 md:p-10 lg:p-16"
+                className="rounded-xl sm:rounded-2xl p-3 sm:p-6 md:p-10 lg:p-16"
               >
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="space-y-24"
+                  className="space-y-10 sm:space-y-16 md:space-y-24" // Reduced spacing between sections
                 >
-                  <div className="bg-[#F1E2C6]/40 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-xl">
-                    <p className="text-xl md:text-2xl text-[#3E2A47] max-w-5xl mx-auto leading-relaxed">
+                  {/* More compact description panel */}
+                  <div className="bg-[#F1E2C6]/40 backdrop-blur-sm p-4 sm:p-8 md:p-12 rounded-lg sm:rounded-2xl shadow-md sm:shadow-xl">
+                    <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-[#3E2A47] max-w-5xl mx-auto leading-relaxed">
                       {category.description}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
+                  {/* Smaller gaps between product cards */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20">
                     {category.types.map((product, index) => (
                       <motion.div
                         key={index}
-                        className="bg-[#F1E2C6] rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:shadow-[#7B3F00]/30 transform transition-all duration-500"
-                        whileHover={{ scale: 1.02, y: -10 }}
-                        initial={{ opacity: 0, y: 40 }}
+                        className="bg-[#F1E2C6] rounded-lg sm:rounded-xl md:rounded-2xl shadow-md sm:shadow-xl overflow-hidden hover:shadow-lg hover:shadow-[#7B3F00]/30 transform transition-all duration-500"
+                        whileHover={{ scale: 1.01, y: -5 }} // Reduced hover effect for mobile
+                        initial={{ opacity: 0, y: 20 }} // Reduced animation distance
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: index * 0.2 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }} // Faster animations for mobile
                       >
-                        <div className="relative h-80 md:h-96">
+                        {/* Smaller image container */}
+                        <div className="relative h-48 sm:h-64 md:h-80">
                           <Image
                             src={product.imgSrc}
                             alt={product.name}
                             fill
                             className="object-cover"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                          <div className="absolute bottom-0 left-0 p-8">
-                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{product.name}</h3>
-                            <div className="w-20 h-1 bg-[#C4A79C]"></div>
+                          <div className="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8">
+                            {/* Smaller product title */}
+                            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">
+                              {product.name}
+                            </h3>
+                            <div className="w-12 sm:w-16 md:w-20 h-0.5 sm:h-1 bg-[#C4A79C]"></div>
                           </div>
                         </div>
                         
-                        <div className="p-8 md:p-10">
-                          <p className="text-lg md:text-xl text-[#7B3F00] mb-10 leading-relaxed">
+                        {/* More compact content layout */}
+                        <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+                          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#7B3F00] mb-6 sm:mb-8 md:mb-10 leading-relaxed">
                             {product.description}
                           </p>
                           
-                          {/* Thickness Options */}
-                          <div className="mb-10">
-                            <h4 className="text-xl md:text-2xl font-bold text-[#3E2A47] mb-4 flex items-center">
-                              <span className="w-6 h-6 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          {/* Thickness Options - More compact */}
+                          <div className="mb-6 sm:mb-8 md:mb-10">
+                            <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#3E2A47] mb-2 sm:mb-4 flex items-center">
+                              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#7B3F00] mr-2 sm:mr-3 flex items-center justify-center text-white text-xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                               </span>
                               Thickness Options
                             </h4>
-                            <div className="bg-[#D1B49D]/30 rounded-xl p-6 space-y-4">
+                            {/* Smaller padding and text */}
+                            <div className="bg-[#D1B49D]/30 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 space-y-2 sm:space-y-4">
                               {product.details.map((detail, i) => (
                                 <div key={i} className="flex flex-col md:flex-row md:items-center">
-                                  <span className="font-semibold text-[#3E2A47] md:min-w-[200px] md:mr-4 mb-1 md:mb-0">
+                                  <span className="font-semibold text-[#3E2A47] text-xs sm:text-sm md:text-base md:min-w-[200px] md:mr-4 mb-1 md:mb-0">
                                     {detail.thickness}
                                   </span>
-                                  <span className="text-[#7B3F00]">{detail.description}</span>
+                                  <span className="text-[#7B3F00] text-xs sm:text-sm md:text-base">{detail.description}</span>
                                 </div>
                               ))}
                             </div>
                           </div>
                           
-                          {/* Applications - Improved Bullet Points */}
-                          <div className="mb-10">
-                            <h4 className="text-xl md:text-2xl font-bold text-[#3E2A47] mb-4 flex items-center">
-                              <span className="w-6 h-6 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          {/* Applications - More compact */}
+                          <div className="mb-6 sm:mb-8 md:mb-10">
+                            <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#3E2A47] mb-2 sm:mb-4 flex items-center">
+                              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#7B3F00] mr-2 sm:mr-3 flex items-center justify-center text-white text-xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                                 </svg>
                               </span>
                               Applications
                             </h4>
-                            <div className="bg-[#D1B49D]/30 rounded-xl p-6">
-                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 gap-y-4">
+                            {/* Smaller padding and grid gap */}
+                            <div className="bg-[#D1B49D]/30 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6">
+                              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 gap-y-2 sm:gap-y-4">
                                 {product.applications.map((app, i) => (
                                   <BulletPoint key={i} text={app} />
                                 ))}
@@ -327,18 +334,19 @@ const ProductsSection = () => {
                             </div>
                           </div>
                           
-                          {/* Available Sizes - Improved Bullet Points */}
+                          {/* Available Sizes - More compact */}
                           <div>
-                            <h4 className="text-xl md:text-2xl font-bold text-[#3E2A47] mb-4 flex items-center">
-                              <span className="w-6 h-6 rounded-full bg-[#7B3F00] mr-3 flex items-center justify-center text-white text-xs">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#3E2A47] mb-2 sm:mb-4 flex items-center">
+                              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#7B3F00] mr-2 sm:mr-3 flex items-center justify-center text-white text-xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
                                 </svg>
                               </span>
                               Available Sizes
                             </h4>
-                            <div className="bg-[#D1B49D]/30 rounded-xl p-6">
-                              <ul className="space-y-4">
+                            {/* Smaller padding and spacing */}
+                            <div className="bg-[#D1B49D]/30 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6">
+                              <ul className="space-y-2 sm:space-y-4">
                                 {product.sizes.map((size, i) => (
                                   <BulletPoint key={i} text={size} isCompact={true} />
                                 ))}
@@ -355,33 +363,35 @@ const ProductsSection = () => {
           </Tab.Panels>
         </Tab.Group>
 
+        {/* CTA Section - More compact for mobile */}
         <motion.div 
-          className="mt-24 text-center bg-[#3E2A47] p-10 md:p-16 rounded-2xl shadow-2xl"
-          initial={{ opacity: 0, y: 30 }}
+          className="mt-10 sm:mt-16 md:mt-24 text-center bg-[#3E2A47] p-5 sm:p-8 md:p-12 lg:p-16 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl md:text-3xl font-nexaBold font-bold text-[#F1E2C6] mb-6">
+          {/* Smaller headings and text */}
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F1E2C6] mb-3 sm:mb-4 md:mb-6">
             Premium Quality, Exceptional Results
           </h3>
-          <p className="text-xl text-[#C4A79C] max-w-4xl mx-auto mb-10 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#C4A79C] max-w-4xl mx-auto mb-6 sm:mb-8 md:mb-10 leading-relaxed px-1 sm:px-0">
             At Classic Veneer, we pride ourselves on delivering premium quality products that meet international standards. 
             Our commitment to sustainability ensures that all our wood products are sourced from responsibly managed forests.
           </p>
           
+          {/* Smaller button */}
           <motion.button 
             onClick={openModal}
-            href="/contact"
-            className="inline-block bg-[#7B3F00] text-[#F1E2C6] font-bold text-lg py-4 px-10 rounded-lg shadow-lg hover:shadow-xl hover:shadow-[#7B3F00]/40 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-[#7B3F00] text-[#F1E2C6] font-medium sm:font-bold text-sm sm:text-base md:text-lg py-2.5 sm:py-3 md:py-4 px-6 sm:px-8 md:px-10 rounded-md sm:rounded-lg shadow-md sm:shadow-lg hover:shadow-lg hover:shadow-[#7B3F00]/40 transition-all duration-300"
+            whileHover={{ scale: 1.03 }} // Reduced hover scale for mobile
+            whileTap={{ scale: 0.97 }}
           >
             Request a Quote
           </motion.button>
         </motion.div>
       </div>
-            {showModal && <Modal onClose={closeModal} />}
+      {showModal && <Modal onClose={closeModal} />}
     </section>
   );
 };

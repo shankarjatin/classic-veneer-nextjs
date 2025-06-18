@@ -109,25 +109,45 @@ const AboutUs = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-64 sm:h-72 md:h-80">
-                <Image
-                  src="/assets/images/ajay-kumar.jpg" 
-                  alt="Deepak Chaudhary - Director General"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
-                <div className="absolute bottom-0 left-0 p-4 sm:p-6">
-                  <h4 className="text-xl sm:text-2xl font-bold mb-1 text-white">Deepak Chaudhary</h4>
-                  <div className="flex items-center">
-                    <div className="w-8 sm:w-10 h-0.5 bg-[#F1E2C6] mr-3"></div>
-                    <p className="text-sm sm:text-base text-[#F1E2C6] font-light">Director General</p>
-                  </div>
-                </div>
-              </div>
+           
+<div className="relative h-64 sm:h-72 md:h-80">
+  <Image
+    src="/assets/images/ajay-kumar.jpg" 
+    alt="Deepak Chaudhary - Director General"
+    fill
+    className="object-cover object-center"
+    sizes="(max-width: 768px) 100vw, 50vw"
+    placeholder="blur"
+    blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
+    onError={(e) => {
+      e.target.style.display = "none";
+      const parent = e.target.parentNode;
+      
+      // Create fallback element with initials
+      const fallback = document.createElement("div");
+      fallback.className = "w-full h-full bg-[#7B3F00] flex items-center justify-center";
+      
+      // Get initials from name
+      const name = "Deepak Chaudhary";
+      const initials = name.split(" ").map(part => part[0]).join("");
+      
+      const initialsElement = document.createElement("span");
+      initialsElement.className = "text-5xl font-bold text-[#F1E2C6] font-montserrat";
+      initialsElement.textContent = initials;
+      
+      fallback.appendChild(initialsElement);
+      // parent.appendChild(fallback);
+    }}
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
+  <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+    <h4 className="text-xl sm:text-2xl font-bold mb-1 text-white">Deepak Chaudhary</h4>
+    <div className="flex items-center">
+      <div className="w-8 sm:w-10 h-0.5 bg-[#F1E2C6] mr-3"></div>
+      <p className="text-sm sm:text-base text-[#F1E2C6] font-light">Director General</p>
+    </div>
+  </div>
+</div>
               
               <div className="p-4 sm:p-6">
                 <div className="mb-4">
@@ -188,25 +208,45 @@ const AboutUs = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-64 sm:h-72 md:h-80">
-                <Image
-                  src="/assets/images/ajay-kumar.jpg" 
-                  alt="Ajay Kumar - Admin and Sales Director"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
-                <div className="absolute bottom-0 left-0 p-4 sm:p-6">
-                  <h4 className="text-xl sm:text-2xl font-bold mb-1 text-white">Ajay Kumar</h4>
-                  <div className="flex items-center">
-                    <div className="w-8 sm:w-10 h-0.5 bg-[#F1E2C6] mr-3"></div>
-                    <p className="text-sm sm:text-base text-[#F1E2C6] font-light">Admin and Sales Director</p>
-                  </div>
-                </div>
-              </div>
+
+<div className="relative h-64 sm:h-72 md:h-80">
+  <Image
+    src="/assets/images/ajay-kumar.jpg" 
+    alt="Ajay Kumar - Admin and Sales Director"
+    fill
+    className="object-cover object-center"
+    sizes="(max-width: 768px) 100vw, 50vw"
+    placeholder="blur"
+    blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
+    onError={(e) => {
+      e.target.style.display = "none";
+      const parent = e.target.parentNode;
+      
+      // Create fallback element with initials
+      const fallback = document.createElement("div");
+      fallback.className = "w-full h-full bg-[#7B3F00] flex items-center justify-center";
+      
+      // Get initials from name
+      const name = "Ajay Kumar";
+      const initials = name.split(" ").map(part => part[0]).join("");
+      
+      const initialsElement = document.createElement("span");
+      initialsElement.className = "text-5xl font-bold text-[#F1E2C6] font-montserrat";
+      initialsElement.textContent = initials;
+      
+      fallback.appendChild(initialsElement);
+   
+    }}
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
+  <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+    <h4 className="text-xl sm:text-2xl font-bold mb-1 text-white">Ajay Kumar</h4>
+    <div className="flex items-center">
+      <div className="w-8 sm:w-10 h-0.5 bg-[#F1E2C6] mr-3"></div>
+      <p className="text-sm sm:text-base text-[#F1E2C6] font-light">Admin and Sales Director</p>
+    </div>
+  </div>
+</div>
               
               <div className="p-4 sm:p-6">
                 <div className="mb-4">
