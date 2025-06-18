@@ -26,7 +26,7 @@ const companies = [
 
 const PlacesScroll = () => {
   return (
-    <div className="relative text-center py-8 lg:py-20 px-4 ">
+    <div className="relative text-center py-4 lg:py-8 px-4 ">
     {/* Plywood Texture Background */}
     <motion.div
       className="absolute inset-0 opacity-30 pointer-events-none"

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./Carousel";
-import Image from "next/image"; // Next.js Image component for optimized image loading
+import Image from "next/image";
 
 const images = [
   {
@@ -38,18 +38,25 @@ const CarouselDemo = () => {
     setCurrentIndex(newIndex);
   };
 
+  // Calculate progress percentage
+  const progressPercentage = ((currentIndex + 1) / images.length) * 100;
+
   return (
-    <div className="bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C] p-16">
-      <h2 className="text-4xl lg:text-6xl font-extrabold text-[#3E2A47] text-center mb-10 lg:mb-20">
+    <div className="bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C] p-2 sm:p-3 md:p-4">
+      {/* Reduced heading size and spacing */}
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3E2A47] text-center mb-4 sm:mb-6 md:mb-10">
         Types of Glue Used
       </h2>
-      <Carousel className="relative w-full rounded-3xl overflow-hidden">
+      
+      <Carousel className="relative w-full rounded-lg sm:rounded-xl md:rounded-3xl overflow-hidden">
+        {/* Reduced height for mobile */}
         <CarouselContent
           className="flex transition-transform duration-500 ease-in-out"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
-            height: "50vh",
-            minHeight: "300px",
+            height: "30vh",
+            minHeight: "200px", // Reduced from 300px
+            maxHeight: "450px",
           }}
         >
           {images.map((image, index) => (
@@ -60,27 +67,30 @@ const CarouselDemo = () => {
                   alt={image.title}
                   fill
                   className="object-cover"
-                  priority={index === 0} // Prioritize the first image for faster loading
+                  priority={index === 0}
                   placeholder="blur"
                   blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjwvc3ZnPg=="
+                  sizes="100vw"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     const fallbackContainer = document.createElement('div');
                     fallbackContainer.className = 'w-full h-full bg-[#D1B49D] flex items-center justify-center';
                     const initials = document.createElement('span');
-                    initials.className = 'text-3xl font-bold text-[#7B3F00]';
+                    initials.className = 'text-xl font-bold text-[#7B3F00]';
                     initials.textContent = 'Image Unavailable';
                     fallbackContainer.appendChild(initials);
                     e.currentTarget.parentNode.appendChild(fallbackContainer);
                   }}
                 />
               </div>
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/40 to-black/70 text-white text-center px-8 lg:p-4">
-                <div className="max-w-xs md:max-w-lg">
-                  <h2 className="text-3xl lg:text-5xl sm:text-3xl md:text-2xl font-archivo font-bold">
+              
+              {/* Improved mobile text overlay */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/40 to-black/70 text-white text-center px-4 sm:px-6">
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
                     {image.title}
                   </h2>
-                  <p className="mt-2 text-md lg:text-lg font-archivo-100 sm:text-base md:text-base px-4">
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base max-w-[90%] mx-auto">
                     {image.description}
                   </p>
                 </div>
@@ -88,18 +98,30 @@ const CarouselDemo = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        
+        {/* Smaller navigation buttons for mobile */}
         <CarouselPrevious
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 sm:p-2 rounded-full text-lg sm:text-base"
+          className="absolute top-1/2 left-2 sm:left-3 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full"
         >
-          <FaArrowLeft />
+          <FaArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" />
         </CarouselPrevious>
         <CarouselNext
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 sm:p-2 rounded-full text-lg sm:text-base"
+          className="absolute top-1/2 right-2 sm:right-3 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full"
         >
-          <FaArrowRight />
+          <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
         </CarouselNext>
+        
+        {/* Added slide indicator/progress bar */}
+        <div className="absolute bottom-2 sm:bottom-3 left-0 right-0 flex justify-center items-center px-4">
+          <div className="w-full max-w-[100px] sm:max-w-[150px] bg-white/30 h-1 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-white transition-all duration-300 ease-in-out rounded-full"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+        </div>
       </Carousel>
     </div>
   );
