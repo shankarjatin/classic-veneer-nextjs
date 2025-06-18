@@ -70,7 +70,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="py-6 sm:py-8 md:py-16 px-3 sm:px-6 md:px-12 lg:px-20 bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C]">
+    <section className="py-6 sm:py-8 md:py-16 px-3 sm:px-6 md:px-12 lg:px-20 bg-gradient-to-r from-[#D1B49D] via-[#F1E2C6] to-[#C4A79C] ">
       <div className="max-w-7xl mx-auto">
         {/* Header - Reduced margins and font sizes */}
         <motion.div 
