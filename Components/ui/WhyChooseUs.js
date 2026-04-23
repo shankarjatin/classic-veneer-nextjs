@@ -42,9 +42,9 @@ const services = [
     color: "#3E2A47"
   },
   {
-    name: "Expert Craftsmanship",
+    name: "CE2+ Certifications",
     description:
-      "Our team of highly skilled craftspeople brings decades of experience to every veneer and plywood product, ensuring precision cutting, optimal thickness, and flawless finishing.",
+      "Our CE2+ certified product standards reflect advanced compliance, safety, and performance benchmarks for premium veneer and plywood applications.",
     icon: faUsers,
     color: "#3E2A47"
   },

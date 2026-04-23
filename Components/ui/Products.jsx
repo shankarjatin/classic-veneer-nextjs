@@ -6,6 +6,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
 import Modal from '../modals/modal';
+import faceVeneerImage from '../../public/assets/images/face-veneer.png';
+import coreVeneerImage from '../../public/assets/images/core-veneer.jpeg';
+import commercialPlywoodImage from '../../public/assets/images/commercialnew.jpg';
+import constructionPlywoodImage from '../../public/assets/images/constructive.jpg';
+import marinePlywoodImage from '../../public/assets/images/marine.jpg';
+import laminatedPlywoodImage from '../../public/assets/images/laminated.jpg';
 
 // Use specific color codes instead of variables
 const COLORS = {
@@ -26,7 +32,7 @@ const products = [
       // Veneer types remain unchanged
       {
         name: 'Rotary Cut Face Veneer',
-        imgSrc: '/assets/images/face-veneer.png',
+        imgSrc: faceVeneerImage,
         description: 'Rotary cut face veneers are made by peeling a log of wood in a continuous sheet using a rotary lathe, giving the veneer a unique and natural wood grain. This process is often used for creating a more uniform appearance for decorative surfaces.',
         details: [
           { thickness: '0.25mm to 0.6mm', description: 'Ultra-thin veneers for decorative applications.' },
@@ -46,7 +52,7 @@ const products = [
       },
       {
         name: 'Core Veneer',
-        imgSrc: '/assets/images/core-veneer.jpg',
+        imgSrc: coreVeneerImage,
         description: 'Core veneer is used as the internal layer of plywood, providing structural strength and stability. It is typically thicker than face veneer and plays a vital role in the overall strength of the plywood.',
         details: [
           { thickness: '1.0mm to 1.5mm', description: 'Thin core veneer for lighter construction.' },
@@ -75,7 +81,7 @@ const products = [
       // Data unchanged - keeping all product types and details
       {
         name: 'Commercial Plywood',
-        imgSrc: '/assets/images/commercial.jpg',
+        imgSrc: commercialPlywoodImage,
         description: 'Standard plywood suitable for general-purpose use in construction and furniture-making.',
         details: [
           { thickness: '3mm to 6mm', description: 'Lightweight for decorative and low-stress applications.' },
@@ -91,13 +97,13 @@ const products = [
         ],
         sizes: [
           '8 Feet (2500mm x 1220mm/1250mm)',
-          '10 Feet (3100mm x 1530mm) (Big Format)'
+          '10 Feet (3100/3050mm x 1530/1525mm) (Big Format)'
         ]
       },
       // Other product types unchanged
       {
         name: 'Construction Plywood',
-        imgSrc: '/assets/images/constructive.jpg',
+        imgSrc: constructionPlywoodImage,
         description: 'Durable and versatile for structural applications.',
         details: [
           { thickness: '3mm to 6mm', description: 'Thin plywood for non-structural applications.' },
@@ -114,12 +120,12 @@ const products = [
         ],
         sizes: [
           '8 Feet (2500mm x 1220mm/1250mm)',
-          '10 Feet (3100mm x 1530mm) (Big Format)'
+          '10 Feet (3100/3050mm x 1530/1525mm) (Big Format)'
         ]
       },
       {
         name: 'Marine Plywood',
-        imgSrc: '/assets/images/marine.jpg',
+        imgSrc: marinePlywoodImage,
         description: 'Designed for water exposure, perfect for boat building.',
         details: [
           { thickness: '6mm to 12mm', description: 'Lighter marine plywood for boat interiors.' },
@@ -134,13 +140,13 @@ const products = [
         ],
         sizes: [
           '8 Feet (2500mm x 1220mm)',
-          '10 Feet (3100mm x 1530mm) (Big Format)',
+          '10 Feet (3100/3050mm x 1530/1525mm) (Big Format)',
           '3100/3050 x 1530/1525 mm'
         ]
       },
       {
         name: 'Laminated Plywood',
-        imgSrc: '/assets/images/laminated.jpg',
+        imgSrc: laminatedPlywoodImage,
         description: 'Cost-effective, used in various construction applications.',
         details: [
           { thickness: '3mm to 6mm', description: 'Thin laminated plywood with various finishes.' },
@@ -156,7 +162,7 @@ const products = [
         ],
         sizes: [
           '8 Feet (2500mm x 1220mm/1250mm)',
-          '10 Feet (3100mm x 1530mm) (Big Format)',
+          '10 Feet (3100/3050mm x 1530/1525mm) (Big Format)',
           '3100/3050 x 1530/1525 mm'
         ]
       }

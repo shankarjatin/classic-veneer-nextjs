@@ -5,8 +5,15 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import './animate.css';
 
+const heroBackgroundVideos = [
+  '/assets/images/production/bg1.mp4',
+  '/assets/images/production/bg2.mp4',
+  '/assets/images/production/bg3.mp4',
+];
+
 const HeroSection = () => {
   const [showModal, setShowModal] = useState(false);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -24,13 +31,25 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleVideoEnd = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % heroBackgroundVideos.length);
+  };
+
   return (
     <div>
       {showModal && <Modal onClose={handleCloseModal} />}
       <section className="relative h-[80vh] md:h-[100vh] flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <video className="object-cover w-full h-full" autoPlay loop muted>
-            <source src="/videos/bgVideo.mp4" type="video/mp4" />
+          <video
+            key={heroBackgroundVideos[currentVideoIndex]}
+            className="object-cover w-full h-full"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            onEnded={handleVideoEnd}
+          >
+            <source src={heroBackgroundVideos[currentVideoIndex]} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

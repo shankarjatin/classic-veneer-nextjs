@@ -22,7 +22,7 @@ const BulletPoint = ({ text, isCompact = false }) => (
 const services = [
   { 
     name: 'Commercial Plywood', 
-    imgSrc: '/assets/images/commercial.jpg', 
+    imgSrc: '/assets/images/commercialnew.jpg', 
     description: 'Our commercial plywood is perfect for furniture, cabinetry, and interior design. Crafted with premium woods, it offers exceptional stability and an elegant finish.',
     features: ['Furniture grade', 'Interior use', 'Smooth finish', 'High stability']
   },
@@ -52,7 +52,7 @@ const services = [
   },
   { 
     name: 'Core Veneer', 
-    imgSrc: '/assets/images/core-veneer.jpg', 
+    imgSrc: '/assets/images/core-veneer.jpeg', 
     description: 'The foundation of quality plywood, our core veneers provide exceptional strength and stability, ensuring long-lasting performance in all applications.',
     features: ['Structural strength', 'Dimensional stability', 'Multiple thickness options', 'Sustainable sourcing']
   },

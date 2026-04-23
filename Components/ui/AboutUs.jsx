@@ -100,23 +100,23 @@ const AboutUs = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+          <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 max-w-4xl mx-auto">
             {/* Executive 1 - Deepak Chaudhary - Mobile optimized */}
             <motion.div
-              className="bg-gradient-to-br from-[#F1E2C6] to-[#D1B49D] rounded-lg sm:rounded-xl shadow-md overflow-hidden"
+              className="bg-gradient-to-br from-[#F1E2C6] to-[#D1B49D] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
            
-<div className="relative h-64 sm:h-72 md:h-80">
+<div className="relative h-72 sm:h-80 md:h-96 w-full">
   <Image
     src="/assets/images/ajay-kumar.jpg" 
     alt="Deepak Chaudhary - Director General"
     fill
     className="object-cover object-center"
-    sizes="(max-width: 768px) 100vw, 50vw"
+    sizes="100vw"
     placeholder="blur"
     blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
     onError={(e) => {
@@ -139,59 +139,59 @@ const AboutUs = () => {
       // parent.appendChild(fallback);
     }}
   />
-  <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
-  <div className="absolute bottom-0 left-0 p-4 sm:p-6">
-    <h4 className="text-xl sm:text-2xl font-bold mb-1 text-white">Deepak Chaudhary</h4>
+  <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-90"></div>
+  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+    <h4 className="text-2xl sm:text-3xl font-bold mb-2 text-white">Deepak Chaudhary</h4>
     <div className="flex items-center">
-      <div className="w-8 sm:w-10 h-0.5 bg-[#F1E2C6] mr-3"></div>
-      <p className="text-sm sm:text-base text-[#F1E2C6] font-light">Director General</p>
+      <div className="w-12 h-1 bg-gradient-to-r from-[#F1E2C6] to-transparent mr-4"></div>
+      <p className="text-base sm:text-lg text-[#F1E2C6] font-light">Director General</p>
     </div>
   </div>
 </div>
               
-              <div className="p-4 sm:p-6">
-                <div className="mb-4">
-                  <h5 className="text-base sm:text-lg font-bold text-[#3E2A47] mb-2 flex items-center">
-                    <FaAward className="mr-2 text-[#7B3F00] text-sm sm:text-base" />
+              <div className="p-6 sm:p-8 md:p-10">
+                <div className="mb-6">
+                  <h5 className="text-lg sm:text-xl font-bold text-[#3E2A47] mb-3 flex items-center">
+                    <FaAward className="mr-3 text-[#7B3F00]" />
                     Education
                   </h5>
-                  <ul className="list-none space-y-1 ml-6 text-sm sm:text-base">
+                  <ul className="list-none space-y-2 ml-8 text-sm sm:text-base">
                     <li className="flex items-center text-[#7B3F00]">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#7B3F00] mr-2"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#7B3F00] mr-3"></div>
                       B.Tech in Mechanical Engineering
                     </li>
                     <li className="flex items-center text-[#7B3F00]">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#7B3F00] mr-2"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#7B3F00] mr-3"></div>
                       MBA in Global Business
                     </li>
                   </ul>
                 </div>
                 
-                <div className="mb-4">
-                  <h5 className="text-base sm:text-lg font-bold text-[#3E2A47] mb-2 flex items-center">
-                    <FaCheck className="mr-2 text-[#7B3F00] text-sm sm:text-base" />
+                <div className="mb-6">
+                  <h5 className="text-lg sm:text-xl font-bold text-[#3E2A47] mb-3 flex items-center">
+                    <FaCheck className="mr-3 text-[#7B3F00]" />
                     Experience
                   </h5>
-                  <p className="text-[#7B3F00] text-xs sm:text-sm leading-relaxed">
+                  <p className="text-[#7B3F00] text-sm sm:text-base leading-relaxed">
                     With over 5 years of experience, I bring a strong blend of technical expertise and strategic management skills. 
                     My background in Mechanical Engineering provides a solid foundation in technical problem-solving, 
                     while my MBA equips me with the leadership capabilities necessary to drive organizational growth and efficiency.
                   </p>
                 </div>
                 
-                <div>
-                  <h5 className="text-base sm:text-lg font-bold text-[#3E2A47] mb-2 flex items-center">
-                    <FaEnvelope className="mr-2 text-[#7B3F00] text-sm sm:text-base" />
+                <div className="pt-6 border-t border-[#D1B49D]">
+                  <h5 className="text-lg sm:text-xl font-bold text-[#3E2A47] mb-3 flex items-center">
+                    <FaEnvelope className="mr-3 text-[#7B3F00]" />
                     Contact
                   </h5>
-                  <div className="space-y-2 ml-6">
+                  <div className="space-y-3 ml-8">
                     <div className="flex items-center">
-                      <FaPhoneAlt className="text-[#7B3F00] mr-2 text-xs sm:text-sm flex-shrink-0" />
-                      <span className="text-[#7B3F00] text-xs sm:text-sm">+91 9897144240, +241 77872328</span>
+                      <FaPhoneAlt className="text-[#7B3F00] mr-3 flex-shrink-0" />
+                      <span className="text-[#7B3F00] text-sm sm:text-base">+91 9897144240, +241 77872328</span>
                     </div>
                     <div className="flex items-center">
-                      <FaEnvelope className="text-[#7B3F00] mr-2 text-xs sm:text-sm flex-shrink-0" />
-                      <a href="mailto:Deepak10chaudhary@gmail.com" className="text-[#7B3F00] text-xs sm:text-sm hover:underline truncate">
+                      <FaEnvelope className="text-[#7B3F00] mr-3 flex-shrink-0" />
+                      <a href="mailto:Deepak10chaudhary@gmail.com" className="text-[#7B3F00] text-sm sm:text-base hover:underline truncate">
                         Deepak10chaudhary@gmail.com
                       </a>
                     </div>
@@ -202,20 +202,20 @@ const AboutUs = () => {
             
             {/* Executive 2 - Ajay Kumar - Mobile optimized */}
             <motion.div
-              className="bg-gradient-to-br from-[#F1E2C6] to-[#D1B49D] rounded-lg sm:rounded-xl shadow-md overflow-hidden"
+              className="bg-gradient-to-br from-[#F1E2C6] to-[#D1B49D] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
 
-<div className="relative h-64 sm:h-72 md:h-80">
+<div className="relative h-72 sm:h-80 md:h-96 w-full">
   <Image
     src="/assets/images/ajay-kumar.jpg" 
     alt="Ajay Kumar - Admin and Sales Director"
     fill
     className="object-cover object-center"
-    sizes="(max-width: 768px) 100vw, 50vw"
+    sizes="100vw"
     placeholder="blur"
     blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2QxYjQ5ZCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNzAiIGZpbGw9IiNmMWUyYzYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZjFlMmM2Ii8+PHJlY3QgeD0iMTIwIiB5PSIyMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZjFlMmM2Ii8+PC9zdmc+"
     onError={(e) => {
@@ -238,46 +238,46 @@ const AboutUs = () => {
    
     }}
   />
-  <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-80"></div>
-  <div className="absolute bottom-0 left-0 p-4 sm:p-6">
-    <h4 className="text-xl sm:text-2xl font-bold mb-1 text-white">Ajay Kumar</h4>
+  <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-90"></div>
+  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+    <h4 className="text-2xl sm:text-3xl font-bold mb-2 text-white">Ajay Kumar</h4>
     <div className="flex items-center">
-      <div className="w-8 sm:w-10 h-0.5 bg-[#F1E2C6] mr-3"></div>
-      <p className="text-sm sm:text-base text-[#F1E2C6] font-light">Admin and Sales Director</p>
+      <div className="w-12 h-1 bg-gradient-to-r from-[#F1E2C6] to-transparent mr-4"></div>
+      <p className="text-base sm:text-lg text-[#F1E2C6] font-light">Admin and Sales Director</p>
     </div>
   </div>
 </div>
               
-              <div className="p-4 sm:p-6">
-                <div className="mb-4">
-                  <h5 className="text-base sm:text-lg font-bold text-[#3E2A47] mb-2 flex items-center">
-                    <FaCheck className="mr-2 text-[#7B3F00] text-sm sm:text-base" />
+              <div className="p-6 sm:p-8 md:p-10">
+                <div className="mb-6">
+                  <h5 className="text-lg sm:text-xl font-bold text-[#3E2A47] mb-3 flex items-center">
+                    <FaCheck className="mr-3 text-[#7B3F00]" />
                     Experience
                   </h5>
-                  <p className="text-[#7B3F00] text-xs sm:text-sm leading-relaxed mb-2">
+                  <p className="text-[#7B3F00] text-sm sm:text-base leading-relaxed mb-3">
                     With over 25 years of extensive corporate experience, Ajay Kumar has established himself as a seasoned 
                     leader in both administration and sales. Throughout his career, he has demonstrated a remarkable ability 
                     to drive business growth and build strong customer relationships.
                   </p>
-                  <p className="text-[#7B3F00] text-xs sm:text-sm leading-relaxed">
+                  <p className="text-[#7B3F00] text-sm sm:text-base leading-relaxed">
                     Ajay's vast experience spans multiple industries, equipping him with a deep understanding of market dynamics. 
                     His commitment to excellence and innovation continues to have a lasting impact on the company's overall success.
                   </p>
                 </div>
                 
-                <div>
-                  <h5 className="text-base sm:text-lg font-bold text-[#3E2A47] mb-2 flex items-center">
-                    <FaEnvelope className="mr-2 text-[#7B3F00] text-sm sm:text-base" />
+                <div className="pt-6 border-t border-[#D1B49D]">
+                  <h5 className="text-lg sm:text-xl font-bold text-[#3E2A47] mb-3 flex items-center">
+                    <FaEnvelope className="mr-3 text-[#7B3F00]" />
                     Contact
                   </h5>
-                  <div className="space-y-2 ml-6">
+                  <div className="space-y-3 ml-8">
                     <div className="flex items-center">
-                      <FaPhoneAlt className="text-[#7B3F00] mr-2 text-xs sm:text-sm flex-shrink-0" />
-                      <span className="text-[#7B3F00] text-xs sm:text-sm">+241 06482507</span>
+                      <FaPhoneAlt className="text-[#7B3F00] mr-3 flex-shrink-0" />
+                      <span className="text-[#7B3F00] text-sm sm:text-base">+241 06482507</span>
                     </div>
                     <div className="flex items-center">
-                      <FaEnvelope className="text-[#7B3F00] mr-2 text-xs sm:text-sm flex-shrink-0" />
-                      <a href="mailto:ajay72kumar@gmail.com" className="text-[#7B3F00] text-xs sm:text-sm hover:underline">
+                      <FaEnvelope className="text-[#7B3F00] mr-3 flex-shrink-0" />
+                      <a href="mailto:ajay72kumar@gmail.com" className="text-[#7B3F00] text-sm sm:text-base hover:underline">
                         ajay72kumar@gmail.com
                       </a>
                     </div>
@@ -288,9 +288,9 @@ const AboutUs = () => {
           </div>
         </motion.div>
 
-        {/* Gallery Section - More compact */}
+        {/* Gallery Section - Our Craftsmanship */}
         <motion.div
-          className="mb-8 sm:mb-16 md:mb-20"
+          className="mb-8 sm:mb-16 md:mb-24"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -305,7 +305,7 @@ const AboutUs = () => {
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
-            {/* Image 1 - Mobile-friendly height */}
+            {/* Image 1 - Premium Wood */}
             <motion.div
               className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -315,54 +315,8 @@ const AboutUs = () => {
               whileHover={{ y: -5 }}
             >
               <Image
-                src="/assets/images/img3.jpg"
-                alt="Wood veneer production"
-                fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-2 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <h4 className="text-sm sm:text-lg md:text-xl font-bold text-white mb-1">Veneer Production</h4>
-                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">State-of-the-art manufacturing process</p>
-              </div>
-            </motion.div>
-            
-            {/* Image 2 - Mobile-friendly height */}
-            <motion.div
-              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
-              <Image
-                src="/assets/images/img4.jpg"
-                alt="Production facility"
-                fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-2 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <h4 className="text-sm sm:text-lg md:text-xl font-bold text-white mb-1">Production Facility</h4>
-                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Modern equipment for premium results</p>
-              </div>
-            </motion.div>
-            
-            {/* Image 3 - Mobile-friendly height */}
-            <motion.div
-              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
-              <Image
                 src="/assets/images/img5.jpg"
-                alt="Wood samples"
+                alt="Premium Wood"
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -374,9 +328,55 @@ const AboutUs = () => {
               </div>
             </motion.div>
             
-            {/* Image 4 - Mobile-friendly height */}
+            {/* Image 2 - Veneer Production */}
             <motion.div
-              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative col-span-2"
+              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/img3.jpg"
+                alt="Veneer Production"
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-2 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-sm sm:text-lg md:text-xl font-bold text-white mb-1">Veneer Production</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">State-of-the-art manufacturing process</p>
+              </div>
+            </motion.div>
+            
+            {/* Image 3 - Production Facility */}
+            <motion.div
+              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/img4.jpg"
+                alt="Production Facility"
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-2 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-sm sm:text-lg md:text-xl font-bold text-white mb-1">Production Facility</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Modern equipment for premium results</p>
+              </div>
+            </motion.div>
+            
+            {/* Image 4 - Finished Products */}
+            <motion.div
+              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative col-span-2 lg:col-span-3"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.25 }}
@@ -385,9 +385,9 @@ const AboutUs = () => {
             >
               <Image
                 src="/assets/images/img6.jpg"
-                alt="Finished products"
+                alt="Finished Products"
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -396,10 +396,121 @@ const AboutUs = () => {
                 <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Superior craftsmanship in every detail</p>
               </div>
             </motion.div>
-            
-            {/* Image 5 - Mobile-friendly height */}
+          </div>
+        </motion.div>
+
+        {/* Production/Manufacturing Facilities Section - New Section */}
+        <motion.div
+          className="mb-8 sm:mb-16 md:mb-24"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-6 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E2A47] mb-2 sm:mb-4">Production & Manufacturing Facilities</h2>
+            <div className="w-20 sm:w-28 h-0.5 sm:h-1 bg-[#7B3F00] mx-auto mb-3 sm:mb-4"></div>
+            <p className="text-sm sm:text-base md:text-lg text-[#7B3F00] max-w-3xl mx-auto px-2">
+              State-of-the-art facilities ensuring world-class quality and efficiency
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {/* Facility 1 - prod1.jpeg */}
             <motion.div
-              className="group h-44 sm:h-56 md:h-72 rounded-md sm:rounded-lg shadow-sm overflow-hidden relative lg:col-span-3 col-span-2"
+              className="group h-56 sm:h-64 md:h-80 rounded-md sm:rounded-lg shadow-md overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/production/prod1.jpeg"
+                alt="Manufacturing Facility 1"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">Advanced Machinery</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Precision equipment for superior quality</p>
+              </div>
+            </motion.div>
+
+            {/* Facility 2 - prod2.jpeg */}
+            <motion.div
+              className="group h-56 sm:h-64 md:h-80 rounded-md sm:rounded-lg shadow-md overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/production/prod2.jpeg"
+                alt="Manufacturing Facility 2"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">Quality Control</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Rigorous testing and inspection</p>
+              </div>
+            </motion.div>
+
+            {/* Facility 3 - prod3.jpeg */}
+            <motion.div
+              className="group h-56 sm:h-64 md:h-80 rounded-md sm:rounded-lg shadow-md overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/production/prod3.jpeg"
+                alt="Manufacturing Facility 3"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">Processing Unit</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Efficient production workflow</p>
+              </div>
+            </motion.div>
+
+            {/* Facility 4 - prod4.jpeg */}
+            <motion.div
+              className="group h-56 sm:h-64 md:h-80 rounded-md sm:rounded-lg shadow-md overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/production/prod4.jpeg"
+                alt="Manufacturing Facility 4"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">Packaging Section</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Safe and secure product handling</p>
+              </div>
+            </motion.div>
+
+            {/* Facility 5 - prod5.jpeg */}
+            <motion.div
+              className="group h-56 sm:h-64 md:h-80 rounded-md sm:rounded-lg shadow-md overflow-hidden relative"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -407,16 +518,39 @@ const AboutUs = () => {
               whileHover={{ y: -5 }}
             >
               <Image
-                src="/assets/images/img7.jpg"
-                alt="Factory overview"
+                src="/assets/images/production/prod5.jpeg"
+                alt="Manufacturing Facility 5"
                 fill
-                sizes="100vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 p-2 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <h4 className="text-sm sm:text-lg md:text-xl font-bold text-white mb-1">Manufacturing Facility</h4>
-                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Where innovation meets tradition</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">Storage Facility</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Climate-controlled inventory</p>
+              </div>
+            </motion.div>
+
+            {/* Facility 6 - prod6.jpeg */}
+            <motion.div
+              className="group h-56 sm:h-64 md:h-80 rounded-md sm:rounded-lg shadow-md overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Image
+                src="/assets/images/production/prod6.jpeg"
+                alt="Manufacturing Facility 6"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3E2A47] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">Finishing Facility</h4>
+                <p className="text-xs sm:text-sm text-[#F1E2C6] line-clamp-2">Premium final touches</p>
               </div>
             </motion.div>
           </div>
@@ -522,7 +656,7 @@ const AboutUs = () => {
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3E2A47]">Our Certifications</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             <motion.div 
               className="bg-[#C4A79C]/30 p-3 sm:p-4 rounded-md border-l-2 sm:border-l-4 border-[#7B3F00]"
               whileHover={{ x: 3 }}
@@ -565,6 +699,21 @@ const AboutUs = () => {
               </h4>
               <p className="text-xs sm:text-sm text-[#7B3F00] leading-relaxed">
                 Classic Veneer's products are CE certified, meeting the European Union's health, safety, and environmental protection standards.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-[#C4A79C]/30 p-3 sm:p-4 rounded-md border-l-2 sm:border-l-4 border-[#7B3F00]"
+              whileHover={{ x: 3 }}
+            >
+              <h4 className="text-base sm:text-lg font-bold text-[#3E2A47] mb-2 flex items-center">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#7B3F00] rounded-full flex items-center justify-center mr-2 text-white text-xs sm:text-sm">
+                  <FaCertificate />
+                </div>
+                CE2+ Certifications
+              </h4>
+              <p className="text-xs sm:text-sm text-[#7B3F00] leading-relaxed">
+                Our CE2+ certified product standards reflect advanced compliance, safety, and performance benchmarks for premium veneer and plywood applications.
               </p>
             </motion.div>
           </div>
