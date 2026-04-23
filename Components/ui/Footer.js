@@ -22,7 +22,7 @@ const Footer = () => {
               <span className="text-2xl font-extrabold text-[#F1E2C6]">Classic Veneer SARL</span>
             </div>
             <p className="text-base leading-6 text-gray-300">
-              Offering high-quality plywood that's built to last. Explore our premium products and join our sustainable journey.
+              Offering high-quality plywood that&apos;s built to last. Explore our premium products and join our sustainable journey.
             </p>
             <div className="space-y-3 mt-6">
               <div className="flex items-center">

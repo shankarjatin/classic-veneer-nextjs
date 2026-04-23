@@ -17,8 +17,6 @@ export const metadata = {
   title: "Classic Veneer - Premium Wood Veneers & Plywood",
   description: "Premium quality veneer and plywood manufacturer from Gabon, Africa. Sustainable Okoumé wood products crafted with precision and care.",
   keywords: ["veneer", "plywood", "Okoumé", "wood", "Gabon", "Africa", "wood products", "sustainable"],
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#7B3F00",
   openGraph: {
     title: "Classic Veneer - Premium Wood Products",
     description: "Premium quality veneer and plywood manufacturer from Gabon, Africa. Sustainable Okoumé wood products.",
@@ -26,6 +24,12 @@ export const metadata = {
     siteName: "Classic Veneer",
     type: "website",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#7B3F00",
 };
 
 export default function RootLayout({ children }) {
