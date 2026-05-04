@@ -14,6 +14,8 @@ import {
   FaShieldAlt 
 } from 'react-icons/fa';
 import ContactButton from './ContactButton';
+import ajay from "../../assets/images/ajay1.png";
+import deepak from "../../assets/images/deepak1.png";
 
 const AboutUs = () => {
   return (
@@ -112,7 +114,7 @@ const AboutUs = () => {
            
 <div className="relative h-72 sm:h-80 md:h-96 w-full">
   <Image
-    src="/assets/images/ajay-kumar.jpg" 
+    src={deepak}
     alt="Deepak Chaudhary - Director General"
     fill
     className="object-cover object-center"
@@ -206,12 +208,12 @@ const AboutUs = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true }} 
             >
 
 <div className="relative h-72 sm:h-80 md:h-96 w-full">
   <Image
-    src="/assets/images/ajay-kumar.jpg" 
+    src={ajay}
     alt="Ajay Kumar - Admin and Sales Director"
     fill
     className="object-cover object-center"

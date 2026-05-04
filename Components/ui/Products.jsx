@@ -141,7 +141,6 @@ const products = [
         sizes: [
           '8 Feet (2500mm x 1220mm)',
           '10 Feet (3100/3050mm x 1530/1525mm) (Big Format)',
-          '3100/3050 x 1530/1525 mm'
         ]
       },
       {
@@ -163,7 +162,7 @@ const products = [
         sizes: [
           '8 Feet (2500mm x 1220mm/1250mm)',
           '10 Feet (3100/3050mm x 1530/1525mm) (Big Format)',
-          '3100/3050 x 1530/1525 mm'
+       
         ]
       }
     ]
